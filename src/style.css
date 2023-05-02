@@ -1,0 +1,738 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Saira', sans-serif;
+}
+.loader{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #020202;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.disppear{
+    animation: vanish 5s forwards;  
+    background-color:#000000;
+
+}
+@keyframes vanish{
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+header{
+    z-index: 888;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+}
+
+header .brand img{   
+    width: 170px;
+    height: 60px;
+}
+
+header .navigation{
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color:black;
+    font-size: 1em;
+    font-weight: 900;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before{
+    content: "";
+    position: absolute;
+    background: black;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+}
+
+header .navigation .navigation-items a:hover:before{
+    width: 100%;
+}
+
+section{
+    padding: 100px 200px;
+}
+
+
+.Home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  
+}
+.Home:before{
+    z-index: 666;
+    content: "";
+    position:absolute;
+    background: rgba(76, 69, 48, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.Home .Content{
+    z-index: 777;
+    color: #fff;
+    width: 70%;
+    margin-top: 50px;
+    display: none;
+}
+
+.Home .Content.active{
+    display: block;
+}
+
+.Home .Content h1{
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 30px;
+    margin-bottom: 12px;
+}
+
+.Home .Content h3{
+    font-size:2em;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+}
+
+
+/* Seccion Scrolling-text */
+.text-animated{
+    margin: 0;
+    padding:0;
+}
+
+
+.text-wrapped{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #020202;
+    color:#dfdb00;
+    overflow:hidden
+}
+
+
+.text-wrapped h1{
+    font-size: large;
+    padding: 10px 20px;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    animation: move-rtl 6000ms linear infinite;
+}
+.text-animated h2{
+   padding: 10px 30px; 
+   font-size: 40px;
+   background-color: rgba(213, 231, 229, 0.5);
+}
+.text-wrapped img{
+    width: 20%;
+
+    padding: 20px 20px;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    animation: move-rtl 6000ms linear infinite;
+}
+@keyframes move-rtl{
+    0%{
+        transform: translateX(0)
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+    
+}
+
+
+/* Seccion Nosotros */
+.nosotros{
+    background-image: url(img-Stamina/low-angle-view-motivated-sportswoman-running-nature-during-misty-weather-copy-space.jpg);
+    background-size: cover;
+    min-height: 110vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 40px;
+    position: relative;
+    
+}
+.StaminaMeaning{
+    position: relative;
+    top: -1px;
+    padding: 30px;
+    box-shadow: 0 0 25px #222;
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    
+
+    
+}
+
+.StaminaMeaning h1{
+   font-size: 50px;
+   padding-bottom: 20px;
+}
+.StaminaMeaning p{
+   
+    padding-bottom: 40px;
+    line-height: 50px;
+ }
+@media(max-width: 991px){
+    .nosotros{
+        
+        background-position: center;
+    }
+    .StaminaMeaning{
+        padding: 20px 10px;
+    }
+    .StaminaMeaning h1{
+        line-height: 60px;
+        text-align: center;
+        
+    }
+    .StaminaMeaning p{
+        text-align: justify;
+        font-size: 25px;
+        line-height: 40px;
+        
+    }
+}
+
+/* Seccion Work-team */
+
+.work-team{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+    align-items: center;
+}
+.work-title{
+    width: 100%;
+    text-align: left;
+    padding: 30px 20px;
+    font-weight: bold;
+}
+.work-title h1{
+    font-size: 50px;
+}
+.card-team{
+    margin: 0 20px;
+    padding: 20px 30px;
+    border-style: solid;
+    border-color: #020202;
+    border-top: none;
+    border-bottom: none;
+    text-align: center;   
+}
+
+@media(max-width: 991px){
+    .work-team{
+        justify-content: center;
+    }
+    .card-team{ border: none;
+        } 
+    .work-title{
+        text-align: center;
+       
+    } 
+    .work-title h1{
+       line-height: 60px;
+       padding-bottom: 20px;
+       
+    } 
+}
+
+
+/* Seccion Israel */
+.israel{
+   width: 100%;
+   margin: 0;
+   padding: 120px 20px 0;
+   color: #000000;
+}
+.experiencia{
+    padding: 30px 10px;
+    font-weight: bold;
+}
+.experiencia p{
+    padding: 10px 90px;
+    line-height: 40px;
+}
+.experiencia h1{
+    font-size: 50px;
+}
+.work-team{
+    
+    background-image: url(img-Stamina/connor-wilkins-4dY4gxT9WOA-unsplash.jpg);
+    background-size: cover;
+    background-position-y: 95%;
+    
+   
+}
+
+@media(max-width: 991px){
+    .experiencia h1{
+        text-align: center;
+        line-height: 55px;
+    }
+    .experiencia p{
+        padding:  20px 0;
+        line-height: 30px;
+        text-align: justify;
+    }
+    .israel{
+        padding: 0 10px;
+    }
+    .work-team{
+        background-position-y: -320px ;
+        background-position-x: -290px;
+    }
+}
+
+
+
+/* Seccion Planes */
+
+.planes{
+    background-image: url(img-Stamina/cyclist-man-riding-bike-road.jpg);
+    background-size: cover;
+    min-height: 120vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+
+.slider{
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    
+    
+}
+.item{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    text-align: justify;
+    background-color: #e4dd9583;
+    border-radius: 10px;
+    padding: 40px;
+    transition: 0.5s;
+    left: calc(40% - 110px);
+    font-family: monospace;
+    font-size:medium;
+    font-weight: 900;
+    line-height: 40px; 
+}
+.elite{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    text-align: justify;
+    background-color: #e4dd9583;
+    border-radius: 10px;
+    padding: 40px;
+    transition: 0.5s;
+    left: calc(40% - 110px);
+    font-family: monospace;
+    font-size:small;
+    font-weight: 900;
+    line-height: 27px; 
+}
+.rendimiento{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    text-align: justify;
+    background-color: #e4dd9583;
+    border-radius: 10px;
+    padding: 40px;
+    transition: 0.5s;
+    left: calc(40% - 110px);
+    font-family: monospace;
+    font-size:small;
+    font-weight: 900;
+    line-height: 27px; 
+}
+.faqs h3{
+    padding-bottom:15px;
+    font-size: 25px;
+}
+.faqs li{
+    font-size: medium;
+    padding-bottom: 15px;
+    padding-top: 15px;;
+    
+}
+.faqs{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    text-align: justify;
+    background-color: #e4dd9583;
+    border-radius: 10px;
+    padding: 40px;
+    transition: 0.5s;
+    left: calc(40% - 110px);
+    font-family: monospace;
+    font-size:small;
+    font-weight: 900;
+    text-align: left;
+    line-height: 20px; 
+}
+
+
+.precio{
+    text-align: center;
+    background-color: #c2c441;
+    border-radius: 10px;
+    margin-top: 23px;
+}
+
+
+#next, #prev{
+    position: absolute;
+    top: 40%;
+    color: #dfdb00;
+    background-color: transparent;
+    border: none;
+    font-size: 70px;
+    font-family: monospace;
+    font-weight: bold;
+    left: 380px;
+}
+#next{
+    left: unset;
+    right: 570px;
+}
+@media(max-width: 991px){
+    .planes{ 
+        
+        background-image: url(img-Stamina/cyclist-man-riding-bike-road\ \(1\)movil.jpg);
+        background-position: center;}
+    #next{
+       left: 345px;
+       font-size: 70px;
+    }
+    #prev{
+        left: 5px;
+        font-size: 70px;
+     }
+}
+
+/* Seccion Footer */
+
+.Home .Content p{
+    font-size: 1em;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 60px;
+}
+
+.Home .Content .pg-about{
+padding-top: 30px;
+color: rgb(255, 255, 255);
+}
+
+
+.Home .Content a{
+    background-color: rgba(255, 251, 0, 0.663);
+    color: black;
+    padding: 15px 35px;
+    font-size: 1.1em;
+    font-weight: 900;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.Home .Media-icons{
+    z-index: 888;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.Home .Media-icons a{
+    background-color: transparent;
+    font-size: 1em;
+    transition: 0.3 ease;
+}
+
+.Home .Media-icons a:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.Home .Media-icons a:hover{
+    transform: scale(1.3);
+}
+
+
+.Home video{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn{
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgb(206, 214, 116);
+    transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active{
+    background: #d7da1c;
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.slider-navigation.nav-btn:hover{
+    transform: scale(1.2)
+}
+
+.video-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.video-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+.footer{
+    background-color: #222;
+    color: #fff;
+    padding: 80px;
+    
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.contenedor-f{
+    max-width: 1200px;  
+    margin: 0 auto;
+    
+    
+}
+.stamina-f h4{
+    font-size: larger;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #c2c441;
+    padding: 10px 0;
+}
+.stamina-f li{
+    list-style: none;
+    padding: 5px 0;
+}
+
+.stamina-f a{
+    font-size: medium;
+    color: #fff;
+    padding: 5px;
+    text-decoration: none;
+}
+.stamina-f{
+    width: 25%;
+    padding: 0 15px;
+    list-style: none;
+    
+}
+.stamina-f ul li a{
+    transition: all .3s ease;
+}
+.stamina-f ul li a:hover{
+    color:#fff;
+    padding-left: 20px;;
+}
+
+
+#footer-icons a:not(:last-child){
+    padding:  30px;
+    margin-bottom: 20px ;
+}
+#footer-icon{
+    padding:10px;
+}
+
+
+#footer-icons :hover{
+    transform: scale(1.3);
+}
+
+
+@media(max-width: 991px){
+    .Content p{
+        line-height: 30px;
+    }
+    .Content{
+        padding-top: 0;
+    }
+    #trail{
+        line-height: 50px;
+    }
+    #acondicionamiento-movil{
+        font-size: 15px;
+    }
+}
+
+
+@media(max-width: 991px){
+    .row{ text-align: center;
+        }
+    .stamina-f{
+        width: 100%;
+        margin-bottom: 30px;
+    }    
+}
+
+
+@media (max-width: 1040px){
+    header{
+        padding: 12px 20px;
+    }
+
+    section{
+        padding: 100px 15px;
+    }
+
+    .Home .Content h1{
+        font-size: 3em;
+      
+    }
+    
+    .Home .Content p{
+        font-size:1.5em;
+    }
+    
+    .Home .Content a{
+        font-size: 0.8em;
+    }
+
+    .Home .Media-icons{
+        right: 6px;
+    }
+
+    
+
+    header .navigation{
+       display: none;
+    }
+
+    header .navigation.active{
+        position: fixed;
+        width: 100%;
+        height: 100vh; 
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(1, 1, 1, 0.5)
+    }
+
+    header .navigation .navigation-items a{
+       
+        color:rgb(208, 211, 9);
+        font-size: 1.2em;
+        margin: 20px
+    }
+
+    header .navigation .navigation-items a:before{
+        background: #222;
+        height: 5px;
+    }
+
+    header .navigation.active .navigation-items{
+        background: white;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0.5px 25px rgb(1 1 1/ 20%);
+    }
+
+    .menu-btn{
+        background: url(img-Stamina/menu.png)no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer; 
+        transition: 0.3 ease;
+    }
+
+    .menu-btn.active{
+        z-index: 999;
+        background: url(img-Stamina/close.png)no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: 0.3s ease;
+    }
+};
+
